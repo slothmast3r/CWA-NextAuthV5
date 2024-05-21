@@ -1,18 +1,23 @@
-import { auth, signOut } from "@/auth";
+"use client";
+
+import { useCurrentUser } from "@/hooks/use-current-user";
+// import { logout } from "@/actions/logout";
+import { signOut } from "next-auth/react";
 import React from "react";
 
-export default async function SettigsPage() {
-  const session = await auth();
+export default function SettigsPage() {
+  const session = useCurrentUser();
+
+  const onClick = () => {
+    signOut();
+    // logout()
+  };
   return (
-    <div>
-      {JSON.stringify(session)}
-      <form
-        action={async () => {
-          "use server";
-          await signOut();
-        }}
-      >
-        <button type="submit">Sign out</button>
+    <div className="bg-white p-10 rounded-xl">
+      <form>
+        <button type="submit" onClick={onClick}>
+          Sign out
+        </button>
       </form>
     </div>
   );
