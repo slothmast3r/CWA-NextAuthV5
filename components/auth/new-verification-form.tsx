@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useEffect, useState } from "react";
 import { CardWrapper } from "./card-wrapper";
 import { BeatLoader } from "react-spinners";
