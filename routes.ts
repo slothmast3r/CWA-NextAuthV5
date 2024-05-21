@@ -8,7 +8,13 @@ export const publicRoutes = ["/", "/auth/new-verification"];
  an array of routes that are used for authentication
 */
 
-export const authRoutes = ["/auth/login", "/auth/register", "/auth/error"];
+export const authRoutes = [
+  "/auth/login",
+  "/auth/register",
+  "/auth/error",
+  "/auth/reset",
+  "/auth/new-password",
+];
 
 /**
  *  the prefix for the api routes
