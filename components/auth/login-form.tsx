@@ -49,7 +49,7 @@ export function LoginForm() {
       login(values).then((result) => {
         setError(result?.error);
         // TODO email verification
-        // setSuccess(result.success);
+        setSuccess(result?.success);
       });
     });
   };
