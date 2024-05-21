@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster } from "sonner";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -28,6 +29,7 @@ export default async function RootLayout({
             fontSans.variable
           )}
         >
+          <Toaster></Toaster>
           {children}
         </body>
       </html>
